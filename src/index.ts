@@ -1,9 +1,10 @@
-// import anotherHello from './models/hello';
+import { anotherHello } from './models/hello';
 
-// eslint-disable-next-line no-unused-vars
-export default async (event: any = {}): Promise<any> => {
-  // console.log(event);
-  // const greeting = anotherHello();
-  const response = JSON.stringify(event, null, 2);
+const handler = async (_event: any = {}): Promise<any> => {
+  console.log('Hello World!');
+  const greeting = anotherHello();
+  const response = JSON.stringify(greeting, null, 2);
   return response;
 };
+
+export { handler };

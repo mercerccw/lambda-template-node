@@ -22,6 +22,6 @@ rm -rf src
 
 rm yarn.lock
 
-zip -rq ../deploy/lambda.zip models index.js
+zip -rq ../deploy/lambda.zip .
 
 cd -

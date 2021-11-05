@@ -2,8 +2,14 @@ import moment from 'moment';
 
 const place = 'person';
 
-export default function anotherHello(world: string = place): void {
+function anotherHello(world: string = place): any {
   const now = moment();
   console.log(now.toISOString());
   console.log(`Hello ${world}! `);
+  return {
+    now: now.toISOString(),
+    greeting: `Hello ${world}! `,
+  };
 }
+
+export { anotherHello };

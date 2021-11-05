@@ -11,8 +11,13 @@
   },
   "plugins": ["@typescript-eslint"],
   "rules": {
+    "no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+    ],
     "import/no-unresolved": "off",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "import/prefer-default-export": "off"
   },
   "overrides": [
     {
