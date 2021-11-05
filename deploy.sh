@@ -14,7 +14,7 @@ pushd ./deploy/terraform
 
 terraform init
 
-terraform apply
+terraform apply -auto-approve
 
 rm lambda_template_node.zip
 
