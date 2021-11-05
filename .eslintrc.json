@@ -1,0 +1,25 @@
+{
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "extends": ["airbnb-base", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "import/no-unresolved": "off",
+    "import/extensions": "off"
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.ts"],
+      "rules": {
+        "quotes": [2, "single"]
+      }
+    }
+  ]
+}

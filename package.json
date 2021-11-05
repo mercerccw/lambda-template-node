@@ -1,0 +1,30 @@
+{
+  "name": "lambda-template",
+  "version": "1.0.0",
+  "author": "Clayton Mercer",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon -L src/index.ts",
+    "lint": "eslint --ext .ts,.tsx,.js,.jsx .",
+    "build": "./build.sh",
+    "transpile": "tsc",
+    "format": "prettier '**/*.{ts,tsx,js,jsx,json,md}'",
+    "format:check": "yarn format --check",
+    "format:write": "yarn format --write"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "@typescript-eslint/parser": "^5.3.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.14",
+    "prettier": "2.4.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
+}
