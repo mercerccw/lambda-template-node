@@ -16,6 +16,6 @@ terraform init
 
 terraform apply -auto-approve
 
-rm lambda_template_node.zip
+# rm lambda_template_node.zip
 
 popd

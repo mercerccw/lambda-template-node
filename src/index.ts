@@ -1,33 +1,24 @@
 import express from 'express';
-import { anotherHello } from './models/hello';
+import serverless from 'serverless-http';
+import { healthCheck, randomEmoji } from './controllers';
 
-const handler = async (_event: any = {}): Promise<any> => {
-  const responseMessage = 'Hello, World!';
-  console.log(anotherHello());
-  return {
-    statusCode: 200,
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      message: responseMessage,
-    }),
-  };
-};
+const app = express();
+const port = 8080;
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.get('/api/health', (req, res) => {
+  res.send({ health: healthCheck().health, version: '1.0' });
+});
+app.get('/api/v1/emoji', (req, res) => {
+  res.send({ emoji: randomEmoji(), version: '1.0' });
+});
+app.post('/api/v1/echo', (req, res) => {
+  res.send({ ...req.body });
+});
 
 if (process.env.isLambda) {
-  module.exports.handler = handler;
+  module.exports.handler = serverless(app);
 } else {
-  const app = express();
-  const port = 8080;
-
-  app.use(express.urlencoded({ extended: true }));
-  app.use(express.json());
-  app.get('/api/info', (req, res) => {
-    res.send({ application: 'sample-app', version: '1.0' });
-  });
-  app.post('/api/v1/getback', (req, res) => {
-    res.send({ ...req.body });
-  });
   app.listen(port, () => console.log(`Listening on: ${port}`));
 }
