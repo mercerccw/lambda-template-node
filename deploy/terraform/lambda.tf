@@ -26,23 +26,3 @@ resource "aws_lambda_function" "lambda_template_node" {
   source_code_hash = "${data.archive_file.lambda_zip.output_base64sha256}"
   runtime          = "nodejs14.x"
 }
-
-resource "aws_iam_role" "iam_for_lambda_tf" {
-  name = "iam_for_lambda_tf"
-
-  assume_role_policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Action": "sts:AssumeRole",
-      "Principal": {
-        "Service": "lambda.amazonaws.com"
-      },
-      "Effect": "Allow",
-      "Sid": ""
-    }
-  ]
-}
-EOF
-}

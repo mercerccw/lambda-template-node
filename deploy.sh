@@ -16,4 +16,6 @@ terraform init
 
 terraform apply
 
+rm lambda_template_node.zip
+
 popd
