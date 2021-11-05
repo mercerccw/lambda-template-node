@@ -1,12 +1,14 @@
+set -e
+
 yarn format:check
 
 yarn lint
 
 rm -rf dist/*
 
-rm deploy/lambda.zip
+[ -e deploy/terraform/build/lambda.zip ] && rm deploy/terraform/build/lambda.zip
 
-rm -rf deploy/lambda
+[ -e deploy/terraform/build/lambda ] && rm -rf deploy/terraform/build/lambda
 
 yarn transpile
 
@@ -22,6 +24,8 @@ rm -rf src
 
 rm yarn.lock
 
-zip -rq ../deploy/lambda.zip .
+mkdir -p ../deploy/terraform/build
+
+zip -rq ../deploy/terraform/build/lambda.zip .
 
 cd -

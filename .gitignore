@@ -1,4 +1,12 @@
 node_modules
-deploy/lambda.zip
+deploy/terraform/build
 dist/
 
+yarn-error.log
+
+deploy/terraform/.terraform
+deploy/terraform/.terraform.lock.hcl
+deploy/terraform/lambda_template_node.zip
+deploy/terraform/terraform.tfstate
+deploy/terraform/terraform.tfstate.backup
+eploy/terraform/.terraform.tfstate.lock.info

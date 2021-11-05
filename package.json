@@ -1,5 +1,5 @@
 {
-  "name": "lambda-template",
+  "name": "lambda-template-node",
   "version": "1.0.0",
   "author": "Clayton Mercer",
   "license": "MIT",
@@ -7,7 +7,10 @@
     "start": "nodemon -L src/index.ts",
     "lint": "eslint --ext .ts,.tsx,.js,.jsx .",
     "build": "./build.sh",
+    "test": "echo no tests present",
     "transpile": "tsc",
+    "predeploy": "yarn test",
+    "deploy": "./deploy.sh",
     "format": "prettier '**/*.{ts,tsx,js,jsx,json,md}'",
     "format:check": "yarn format --check",
     "format:write": "yarn format --write"
