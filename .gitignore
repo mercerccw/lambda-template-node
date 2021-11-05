@@ -10,3 +10,7 @@ deploy/terraform/lambda_template_node.zip
 deploy/terraform/terraform.tfstate
 deploy/terraform/terraform.tfstate.backup
 eploy/terraform/.terraform.tfstate.lock.info
+
+.env
+
+terraform.tfstate

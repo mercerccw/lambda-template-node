@@ -2,7 +2,9 @@ import { anotherHello } from './models/hello';
 
 const handler = async (_event: any = {}): Promise<any> => {
   const responseMessage = 'Hello, World!';
-  console.log(anotherHello());
+  if (process.env.isLambda) {
+    console.log(anotherHello());
+  }
   return {
     statusCode: 200,
     headers: {
