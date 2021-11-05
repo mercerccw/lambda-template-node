@@ -1,9 +1,5 @@
 set -e
 
-yarn format:check
-
-yarn lint
-
 rm -rf dist/*
 
 [ -e deploy/terraform/build/lambda.zip ] && rm deploy/terraform/build/lambda.zip

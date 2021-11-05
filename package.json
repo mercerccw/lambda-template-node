@@ -6,11 +6,11 @@
   "scripts": {
     "start": "nodemon -L src/index.ts",
     "lint": "eslint --ext .ts,.tsx,.js,.jsx .",
+    "prebuild": "yarn test",
     "build": "./build.sh",
     "pretest": "yarn format:check && yarn lint",
     "test": "jest",
     "transpile": "tsc",
-    "predeploy": "yarn test",
     "deploy": "./deploy.sh",
     "format": "prettier '**/*.{ts,tsx,js,jsx,json,md}'",
     "format:check": "yarn format --check",
