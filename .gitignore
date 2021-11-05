@@ -14,3 +14,5 @@ eploy/terraform/.terraform.tfstate.lock.info
 .env
 
 terraform.tfstate
+
+coverage/

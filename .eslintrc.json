@@ -1,7 +1,8 @@
 {
   "env": {
     "node": true,
-    "es6": true
+    "es6": true,
+    "jest/globals": true
   },
   "extends": ["airbnb-base", "prettier"],
   "parser": "@typescript-eslint/parser",
@@ -9,7 +10,7 @@
     "ecmaVersion": 2021,
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "jest"],
   "rules": {
     "no-unused-vars": [
       "error",
@@ -21,7 +22,7 @@
   },
   "overrides": [
     {
-      "files": ["src/**/*.ts"],
+      "files": ["src/**/*.ts", "test/**/*.ts"],
       "rules": {
         "quotes": [2, "single"]
       }
